@@ -45,4 +45,4 @@ docker-compose up -d >> Run multiple containers in background.
 docker-compose down  >> Stop containers
 
 
-docker build -f Dockerfile.dev . 
+docker build -f Dockerfile.dev .
