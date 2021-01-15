@@ -1,0 +1,48 @@
+docker run hello-world
+docker run busybox echo hi there
+docker run busybox ls
+
+docker ps (show running containers only)
+docker run busybox ping google.com
+docker ps --all (show all the containers in the system)
+
+docker run = docker create + docker start
+
+docker create hello-world
+docker start -a CONTAINER_ID
+
+docker system prune
+
+docker create busybox echo hi there
+docker start CONTAINER_ID
+docker logs CONTAINER_ID  (In case if we forget to add flag -a while starting the container)
+
+docker stop CONTAINER_ID
+docker kill CONTAINER_ID
+
+docker run redis
+docker exec -it CONTAINER_ID <command>
+docker exec -it 953eb8c14650 redis-cli
+docker exec -it CONTAINER_ID sh
+docker run -it busybox sh
+
+docker build .
+docker build -t msingh8819/redis:latest .
+
+docker run -p 8081:8081<image_id or image_name>
+docker run -p 5000:8081 msingh8819/simpleweb
+docker run -it msingh8819/simpleweb sh
+
+docker run msingh8819/visits
+
+docker run myimage >> docker-compose up
+
+docker build.    # Feed docker file to docker cli which further feeds it to Docker server that generates the docker image.
+                    >>>> docker-compose up --build
+docker run myimage
+
+docker-compose up -d >> Run multiple containers in background.
+docker-compose down  >> Stop containers
+
+
+docker build -f Dockerfile.dev .
